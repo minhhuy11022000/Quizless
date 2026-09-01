@@ -36,12 +36,11 @@ export function FlashcardDeck({ cards, setId }: { cards: Card[]; setId: string }
         className="flex min-h-56 w-full flex-col items-center justify-center gap-3 rounded-xl border border-zinc-200 bg-white p-8 text-center shadow-sm transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-600"
       >
         <span className="text-2xl font-semibold">{flipped ? card.definition : card.term}</span>
-        {card.example ? (
+        {flipped && card.example ? (
           <span className="text-sm italic text-zinc-500 dark:text-zinc-400">
             “{card.example}”
           </span>
         ) : null}
-        <span className="text-xs tracking-wide text-zinc-400 uppercase">Tap to flip</span>
       </button>
 
       <div className="flex items-center justify-between">
